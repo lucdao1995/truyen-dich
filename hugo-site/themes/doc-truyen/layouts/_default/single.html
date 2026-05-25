@@ -1,0 +1,9 @@
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<div class="chapter-header">
+  <h2>{{ .Title }}</h2>
+</div>
+{{ partial "nav.html" . }}
+<div class="chapter-body">{{ .Content }}</div>
+{{ partial "nav.html" . }}
+{{ end }}

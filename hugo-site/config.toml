@@ -1,0 +1,16 @@
+baseURL = "/"
+languageCode = "vi-vn"
+title = "Truyện dịch"
+theme = "doc-truyen"
+enableEmoji = true
+pygmentsUseClasses = true
+
+[params]
+  description = "Truyện dịch - Hugo site"
+
+[permalinks]
+  xoa-doi-giam-ngheo = "/xoa-doi-giam-ngheo/:slug/"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true

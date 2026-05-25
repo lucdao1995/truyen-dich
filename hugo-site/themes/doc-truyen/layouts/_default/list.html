@@ -1,0 +1,21 @@
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<div class="section-header">
+  {{ with .Params.author }}<span class="meta-author">✍ {{ . }}</span>{{ end }}
+  {{ with .Params.genre }}<span class="meta-genre">📖 {{ . }}</span>{{ end }}
+  <span class="meta-count">📄 {{ len .Pages }} chương</span>
+</div>
+<h2 class="section-title">{{ .Title }}</h2>
+{{ .Content }}
+<ol class="chapter-list">
+  {{ range .Pages.ByParam "chapter" }}
+  <li>
+    <a href="{{ .RelPermalink }}">
+      <span class="ch-num">Chương {{ .Params.chapter }}</span>
+      <span class="ch-name">{{ .Title }}</span>
+      <span class="ch-arrow">→</span>
+    </a>
+  </li>
+  {{ end }}
+</ol>
+{{ end }}

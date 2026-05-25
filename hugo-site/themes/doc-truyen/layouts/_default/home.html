@@ -1,0 +1,20 @@
+{{ define "title" }}Truyện dịch - Trang chủ{{ end }}
+{{ define "main" }}
+<div class="home-hero">
+  <h2>📚 Truyện dịch</h2>
+  <p>Bản dịch hoàn chỉnh — chọn truyện để đọc</p>
+</div>
+<div class="story-list">
+  {{ range (where .Site.Sections "Section" "in" (slice "xoa-doi-giam-ngheo")).ByTitle }}
+  <a href="{{ .RelPermalink }}" class="story-card">
+    <div class="story-info">
+      <h3>{{ .Title }}</h3>
+      {{ with .Params.author }}<span class="story-author">{{ . }}</span>{{ end }}
+      {{ with .Params.genre }}<span class="story-genre">{{ . }}</span>{{ end }}
+      <span class="story-count">{{ len .Pages }} chương</span>
+    </div>
+    <span class="story-arrow">→</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
