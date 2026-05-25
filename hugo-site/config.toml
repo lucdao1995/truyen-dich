@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "/truyen-dich/"
 languageCode = "vi-vn"
 title = "Truyện dịch"
 theme = "doc-truyen"
